@@ -1,0 +1,29 @@
+import urllib.request, urllib.parse, urllib.error
+import json
+import ssl
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+url = input('Enter-')
+print('Retrieving', url)  
+uh = urllib.request.urlopen(url)
+data = uh.read()
+print('Retrieved', len(data), 'characters')
+#print(data.decode())
+#info = json.loads(data)
+info = json.loads(data.decode())
+count= len(info['comments'])
+print('total Count :', count)
+sum = 0
+for j in info['comments']:
+    sum = sum+int(j['count'])
+    
+print(sum)
+ #   print(info[j]['count'])
+    
+#sum = 0 
+#for i in info:
+#    sum = sum + 
+#print(sum)
