@@ -1,0 +1,13 @@
+import re
+fo = open('mail')
+for i in fo:
+    i.rstrip()
+    if not i.startswith('From '): continue
+    i.split()
+    match = re.findall('@(.*)', i)
+   # match.replace(" ", "")
+    print(match[0].replace(" ", ""))
+    
+sentence = ' hello  apple'
+hi = sentence.replace(" ", "")
+print(hi)
