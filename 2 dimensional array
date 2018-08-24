@@ -1,0 +1,13 @@
+def initialize_twodlist():
+    m = int(input("enter row"))
+    n = int(input("enter column"))
+    twod_list = []
+    new = []
+    for i in range (0, m):
+        for j in range (0, n):
+            foo = input("enter")
+            new.append(foo)
+        twod_list.append(new)
+        new = []
+    return twod_list 
+print(initialize_twodlist())
