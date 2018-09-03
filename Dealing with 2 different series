@@ -1,0 +1,18 @@
+import math
+from builtins import list
+
+li = list()
+li1= list()
+
+for i in range(16):
+    li.append(int(math.pow(2,i)))
+    li1.append(int(math.pow(3,i)))
+
+print(li)
+print(li1)  
+n = int(input())
+d = n//2
+if n%2==0:
+    print(li1[d-1])
+else:
+    print(li[d])
