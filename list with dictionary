@@ -1,0 +1,10 @@
+s=input("")
+#d=int(input(""))
+dt={"s":0,"d":1}
+#print(dt[s])
+
+
+li =  [["s"],["d"]]
+print(li[int(dt[s]+1)][int(dt[s])])
+
+
