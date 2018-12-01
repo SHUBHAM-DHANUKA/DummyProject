@@ -1,0 +1,34 @@
+from Node import *;
+
+class LinkedList:
+    def __init__(self): 
+        self.start = None
+        
+    def PrintList(self):
+        temp = start
+        while(temp != None):
+            print(temp.getData())
+            temp = temp.getNext()
+            
+if __name__=='__main__': 
+        Head = Node()
+        Head.setData(10)
+        second= Node()
+        second.setData(20)
+        third = Node()
+        third.setData(30)
+        insert = Node()
+        insert.setData(40)
+        
+            
+        
+        insert.setNext(Head)
+        Head.setNext(second)
+        second.setNext(third)
+        third.setNext(None)
+        
+        start = insert
+        
+li = LinkedList()
+li.PrintList()
+
