@@ -1,0 +1,48 @@
+print("hello Linkedlist")
+from Node import *;
+
+class LinkedList:
+    def __init__(self): 
+        self.start = None
+        
+    def Push(self,inpu):
+        node=Node()
+        node.setData(inpu)
+        node.setNext(self.start)
+        self.start=node    
+    def pop(self,inpu):
+        node=Node()
+        node.setData(inpu)
+        tmep = self.start
+        while(tmep.getNext() != None):
+            tmep = tmep.getNext() 
+        node.setNext=None
+        tmep.setNext(node)
+        
+        
+    def PrintList(self):
+        temp = self.start
+        count =0  
+        while(temp != None):
+            print(temp.getData())
+            print(temp)
+            temp = temp.getNext()
+            print(temp)
+            count = count+1
+        print("Total node is:", count)    
+ 
+    
+
+if __name__=='__main__': 
+    
+    li = LinkedList()
+    x = input("how many node you want to insert ")   
+    for i in range(int(x)):
+        inpu = input("enter data")
+        li.Push(inpu)
+   
+    inpu=input("enter data")
+    li.pop(inpu)   
+
+
+li.PrintList()
