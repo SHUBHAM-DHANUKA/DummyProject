@@ -1,0 +1,66 @@
+from Node import *;
+class reverse:
+    def __init__(self):
+        self.start = None
+        self.prev = None
+        self.next = None
+    
+    def revrse(self):
+        print("reverse")
+        temp = self.start
+        
+        while(temp != None):
+            self.next = temp.getNext()
+            temp.setNext(self.prev)
+            self.prev = temp
+            temp = self.next
+        self.start = self.prev    
+    
+    def Push(self,inpu):
+        node=Node()
+        node.setData(inpu)
+        node.setNext(self.start)
+        self.start=node    
+        
+    
+    def pushend(self,inpu):
+        node=Node()
+        node.setData(inpu)
+        tmep = self.start
+        while(tmep.getNext() != None):
+            tmep = tmep.getNext() 
+        node.setNext(None)
+        tmep.setNext(node)
+        
+
+    
+    def PrintList(self):
+        temp = self.start
+        count =0  
+        while(temp != None):
+            print(temp.getData())
+            print(temp)
+            temp = temp.getNext()
+            print(temp)
+            count = count+1
+        print("Total node is:", count) 
+    
+if __name__=='__main__': 
+    
+    li = reverse()
+    
+    inpu=input("enter data")
+    li.Push(inpu) 
+    inpu=input("enter data")
+    li.pushend(inpu) 
+    inpu=input("enter data")
+    li.pushend(inpu) 
+    inpu=input("enter data")
+    li.pushend(inpu) 
+    inpu=input("enter data")
+    li.pushend(inpu) 
+    
+    
+    li.revrse()
+    
+li.PrintList()  
