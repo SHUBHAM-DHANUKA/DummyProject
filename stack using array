@@ -1,0 +1,42 @@
+print("hello stack world ")
+stack = [None]*10
+
+
+class Stack:
+    def __init__(self):
+        self.top =0
+        
+    def push(self, data):
+        self.top = self.top +1
+        print("top is "+ str(self.top))
+        if (self.top) < 10:
+            stack[self.top] = data
+            print(str(data) +" is pushed")
+        else:
+            print("stack is full ")    
+    
+    
+    def pop(self,stack):
+        if len(stack)== 0:
+            print("stack is empty")
+        else:
+            self.top = self.top -1
+            print(self.top)
+            q =len(stack)-1
+            print("now length of stack is"+ str(q))
+            
+            
+            
+
+if __name__=='__main__':
+    st = Stack()
+    st.push(10)
+    st.push(20)
+    st.push(30)
+    st.push(10)
+    st.push(20)
+    st.push(30)
+    st.push(10)
+    st.push(20)
+    st.push(30)
+    st.pop(stack)
