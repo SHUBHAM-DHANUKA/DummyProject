@@ -1,0 +1,46 @@
+'''
+Created on 02-Dec-2018
+
+@author: techie-monk
+'''
+from Node import *
+from platform import node
+class stack:
+    def __init__(self):
+        self.start  = None
+    
+    def push(self,data):
+        node = Node()
+        node.setData(data)
+        node.setNext(self.start)
+        self.start=node
+    
+    def printlist(self):
+        temp=self.start
+        while(temp != None):
+            print(temp.getData())
+            temp=temp.getNext()
+    
+    def pop(self):
+        temp = self.start
+        print("popping data is " + str(temp.getData()))
+        temp = self.start.getNext()
+        
+        while(temp != None):
+            print(temp.getData())
+            temp=temp.getNext()
+        
+                    
+
+
+
+if __name__=='__main__':
+    print("hello stack world")
+    st = stack()
+    st.push(10)
+    st.push(20)
+    st.push(30)
+    st.push(40)
+    st.push(50)
+    st.printlist()
+    st.pop()
