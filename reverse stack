@@ -1,0 +1,63 @@
+'''
+Created on 02-Dec-2018
+
+@author: techie-monk
+'''
+from Node import *
+from platform import node
+class stack:
+    def __init__(self):
+        self.start  = None
+        self.prev = None
+        self.next = None
+        self.str1 = None
+    
+    def push(self,data):
+        node = Node()
+        node.setData(data)
+        node.setNext(self.start)
+        self.start=node
+    
+    def printlist(self):
+        temp=self.start
+        while(temp != None):
+            print(temp.getData())
+            temp=temp.getNext()
+    
+    def pop(self):
+        temp = self.start
+        
+        print("popping data is " + str(temp.getData()))
+        
+        temp = self.start.getNext()
+        self.str1 =temp
+        del self.start
+        while(temp != None):
+            print(temp.getData())
+            temp=temp.getNext()
+        
+       
+    def revrse(self):
+        print("reverse")
+        temp = self.str1
+        while(temp != None):
+            self.next = temp.getNext()
+            temp.setNext(self.prev)
+            self.prev = temp
+            temp = self.next
+            self.start = self.prev                      
+
+
+
+if __name__=='__main__':
+    print("hello stack world")
+    st = stack()
+    st.push(10)
+    st.push(20)
+    st.push(30)
+    st.push(40)
+    st.push(50)
+    st.printlist()
+    st.pop()
+    st.revrse()
+    st.printlist()
