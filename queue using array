@@ -1,0 +1,87 @@
+'''
+Created on 02-Dec-2018
+
+@author: techie-monk
+'''
+if __name__=='__main__':
+    print("Hello queue world!")
+
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.rear = None
+        self.size = 0
+        self.limit = 10
+        self.queue = []
+        
+    def enque(self,data):
+        if self.size < self.limit:
+            self.queue.append(data)
+            print("data that is enque"+ str(self.queue[self.size]))
+        else:
+            print("queue is overflow") 
+        
+        if self.front == None and self.rear == None:
+            self.front = self.rear = 0
+            print("frontis :" + str(self.front))
+        elif self.rear < self.limit:
+            self.rear = self.rear+1
+            print("rear is " + str(self.rear))
+        self.size = self.size +1
+
+    def deque(self):
+        if self.front < self.limit and self.rear > 0:
+            print("deque process start from here")
+            self.queue.pop(0)
+            self.size = self.size -1
+            self.front = self.front+1
+            print("front is " + str(self.front))
+            self.rear = self.rear-1
+            print("rear is " + str(self.rear)) 
+        elif self.front == 10 and self.rear ==0: 
+            print("you reach boundary")
+            self.front = 11
+            self.rear =-1
+        else:  
+            print("queue is underflow")
+            
+        
+    
+    
+if __name__=='__main__':
+    qe = Queue()
+    qe.enque(10)
+    qe.enque(20)
+    qe.enque(30)
+    qe.enque(40)
+    qe.enque(50)
+    qe.enque(10)
+    qe.enque(20)
+    qe.enque(30)
+    qe.enque(40)
+    qe.enque(50)
+    qe.enque(10)
+    qe.enque(20)
+    qe.enque(30)
+    qe.enque(40)
+    qe.enque(50)
+    qe.deque()
+    qe.deque()
+     
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    qe.deque()
+    
