@@ -1,0 +1,62 @@
+'''
+Created on 03-Dec-2018
+
+@author: techie-monk
+'''
+class binarytree:
+    def __init__(self,data):
+        self.data = data
+        self.left=None
+        self.right=None
+    
+    def insert(self,data):
+        if data <self.data:
+            if self.left is None:
+                self.left = binarytree(data)
+            else:
+                self.left.insert(data)
+        
+        else:
+            if self.right is None:
+                self.right = binarytree(data)
+            else:
+                self.right.insert(data)
+
+                
+    def printtree(self):
+        if self.left:
+            self.left.printtree()    
+        print(self.data)
+        if self.right:
+            self.right.printtree()
+        
+    def PreorderTraversal(self, root):
+        res = []
+        if root:
+            res.append(root.data)
+            res = res + self.PreorderTraversal(root.left)
+            res = res + self.PreorderTraversal(root.right)
+        return res
+    
+    def post(self,root):
+        res=[]
+        if root:
+            res = res + self.PreorderTraversal(root.left)
+            res.append(root.data)
+            res = res + self.PreorderTraversal(root.right)
+        return res
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+if __name__=='__main__':
+    print("heloo binary world")
+    bi = binarytree(27)
+    bi.insert(14)
+    bi.insert(35)   
+    bi.insert(10)   
+    bi.insert(19)   
+    bi.insert(31)   
+    bi.insert(42)    
+    bi.printtree()
+    print("<<<<<<<>>>>>>")
+    print(bi.PreorderTraversal(bi))
+    print("<<<<<<<>>>>>>")
+    print(bi.post(bi))
