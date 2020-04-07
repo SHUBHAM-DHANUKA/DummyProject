@@ -9,6 +9,7 @@ z = 'string'
 print(x)
 print(y)
 print(z)
+print(z)
 z ='2'
 print(int(z))
 print(float(z))
